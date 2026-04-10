@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#004d40">
+    <title>Gallop Academy | Elite Training</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Gallop Academy</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Gallop Academy</h1>
+        <p>Striving for Excellence in Every Movement</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Gallop Academy is dedicated to high-performance training and holistic wellness. From elite athletes to expectant mothers, we provide world-class coaching tailored to your journey.</p>
+        </section>
+
+        <section id="programs">
+            <h2>Our Programs</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Athletics</h3>
+                    <p>Track, field, and strength conditioning for peak performance.</p>
+                </div>
+                <div class="card">
+                    <h3>Swimming</h3>
+                    <p>Technical stroke correction and endurance training.</p>
+                </div>
+                <div class="card">
+                    <h3>Pre & Post Natal</h3>
+                    <p>Safe, effective exercise for every stage of motherhood.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Ready to start? Reach out at <strong>hello@gallopacademy.com</strong></p>
+        </section>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered!'))
+                    .catch(err => console.log('Registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
