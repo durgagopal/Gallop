@@ -1,10 +1,11 @@
 {
   "name": "Gallop Academy",
   "short_name": "Gallop",
-  "start_url": "/index.html",
+  "start_url": "/Gallop/", 
   "display": "standalone",
   "background_color": "#004d40",
   "theme_color": "#004d40",
+  "description": "Elite athletic training producing National Medalists.",
   "icons": [
     {
       "src": "icons/icon-192.png",
