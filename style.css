@@ -1,6 +1,6 @@
 :root {
-    --green: #004d40; /* Forest Green */
-    --gold: #d4af37;  /* Athletic Gold */
+    --green: #004d40; /* Solid Forest Green used for background */
+    --gold: #d4af37;  /* Athletic Gold used for text and borders */
     --light: #f4f4f4;
     --dark: #222;
 }
@@ -14,7 +14,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Nav updates for logo */
+/* Nav updates: simpler, solid green */
 nav {
     background: var(--green);
     color: var(--gold);
@@ -30,41 +30,69 @@ nav {
 nav .logo { 
     font-weight: bold; 
     font-size: 1.5rem; 
-    display: flex; 
-    align-items: center; 
-    gap: 10px;
-}
-
-nav .logo embed {
-    /* To handle potential rendering issues with embedded PDF */
-    pointer-events: none; 
+    color: var(--gold);
 }
 
 nav ul { list-style: none; display: flex; margin: 0; padding: 0;}
 nav ul li { margin-left: 20px; }
 nav ul li a { color: white; text-decoration: none; font-weight: 500; }
 
+/* Header with background overlay removed for alignment */
 header {
-    background: linear-gradient(rgba(0,77,64,0.85), rgba(0,77,64,0.85)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80');
-    background-size: cover;
-    background-position: center;
+    background: var(--green); /* Solid green background, perfectly matching nav */
     color: var(--gold);
-    height: 50vh;
+    height: 60vh; /* Taller header to accommodate logo and text */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 10%;
 }
 
-.center-logo {
-    margin-bottom: 20px;
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 1. Aligned Logo Container */
+.logo-container {
+    background: var(--green); /* Match header background precisely */
+    border: 2px solid var(--gold); /* Add gold circular border for contrast */
+    border-radius: 50%; /* Make container circular */
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    overflow: hidden; /* Keep PDF logo inside circular border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle depth */
+}
+
+/* Force PDF element to align in center */
+.aligned-logo {
+    display: block;
+    pointer-events: none; /* Make PDF non-interactive */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+header .tagline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 5px;
 }
 
 section { padding: 4rem 10%; }
 
 h2 { border-left: 5px solid var(--gold); padding-left: 15px; color: var(--green); margin-bottom: 1.5rem;}
 
-/* New About Section Layout */
 .about-container {
     display: flex;
     gap: 40px;
@@ -96,14 +124,8 @@ h2 { border-left: 5px solid var(--gold); padding-left: 15px; color: var(--green)
     border-radius: 8px;
     border-top: 5px solid var(--gold);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -113,10 +135,11 @@ h2 { border-left: 5px solid var(--gold); padding-left: 15px; color: var(--green)
         max-width: 100%;
     }
     header {
-        height: 40vh;
+        height: 50vh;
     }
+    header h1 { font-size: 2rem; }
 }
 
 @media (max-width: 600px) {
-    nav ul { display: none; } /* Simplified for mobile */
+    nav ul { display: none; }
 }
