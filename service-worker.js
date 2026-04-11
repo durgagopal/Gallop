@@ -3,16 +3,15 @@ const CACHE_NAME = 'gallop-v2-media';
 
 // The list of critical assets that must be cached for offline support.
 // PDFs and JPEGs are included here.
+// Inside the ASSETS array in service-worker.js
 const ASSETS = [
     '/Gallop/',
     '/Gallop/index.html',
     '/Gallop/style.css',
     '/Gallop/manifest.json',
-    // PWA Icons
     '/Gallop/icons/icon-192.png',
     '/Gallop/icons/icon-512.png',
-    // Media requested by user
-    '/Gallop/icons/gallop_logo.pdf',
+    '/Gallop/icons/gallop_logo.png', // Updated from .pdf to .png
     '/Gallop/icons/about_photo.jpg'
 ];
 
