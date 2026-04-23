@@ -1,243 +1,95 @@
-/* --- Gallop Academy Modern Green & Gold UI --- */
-
 :root {
-    --green: #004d40;    /* Deep Forest Green */
-    --gold: #d4af37;     /* Classic Athletic Gold */
-    --gold-light: #f1d592;
+    --gallop-blue: #0054A6;
+    --light-bg: #f4f8fb;
     --white: #ffffff;
-    --light-grey: #f9f9f9;
-    --text-dark: #222222;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    color: #333;
     line-height: 1.6;
-    background-color: var(--light-grey);
-    color: var(--text-dark);
-    scroll-behavior: smooth;
+    background-color: var(--white);
 }
 
-/* --- Navigation --- */
 nav {
-    background: var(--green);
-    color: var(--gold);
-    padding: 0.75rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    background: var(--white);
+    border-bottom: 3px solid var(--gallop-blue);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-nav .logo { 
-    font-weight: 800; 
-    font-size: 1.4rem; 
-    letter-spacing: 1px;
-    text-transform: uppercase;
+nav .logo img { height: 50px; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li a {
+    text-decoration: none;
+    color: var(--gallop-blue);
+    font-weight: bold;
+    margin-left: 20px;
 }
 
-nav ul { 
-    list-style: none; 
-    display: flex; 
-    margin: 0; 
-    padding: 0;
-}
-
-nav ul li { margin-left: 25px; }
-
-nav ul li a { 
-    color: var(--white); 
-    text-decoration: none; 
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--gold);
-}
-
-/* --- Header Section --- */
 header {
-    background: var(--green);
-    color: var(--gold);
-    min-height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: var(--gallop-blue);
+    color: white;
     text-align: center;
-    padding: 2rem 10%;
+    padding: 60px 20px;
 }
 
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+section { padding: 40px 10%; }
 
-.logo-container {
-    background: var(--green); 
-    border: 3px solid var(--gold); 
-    border-radius: 50%; 
-    width: 150px; 
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-    background-color: var(--white); /* White background inside circle to make PNG pop */
-}
-
-.aligned-logo {
-    width: 80%;
-    height: auto;
-    object-fit: contain;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin: 10px 0 0 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-header .tagline {
-    font-size: 1.2rem;
-    color: var(--white);
-    margin-top: 10px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* --- Main Content Sections --- */
-section { 
-    padding: 5rem 10%; 
-}
-
-h2 { 
-    color: var(--green); 
-    font-size: 2.2rem;
-    border-left: 6px solid var(--gold); 
-    padding-left: 15px; 
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-}
-
-/* About Section */
-.about-container {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text .summary {
-    font-size: 1.15rem;
-    color: #444;
-}
-
-.about-text strong {
-    color: var(--green);
-}
-
-.about-image {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border-bottom: 8px solid var(--gold);
-}
-
-/* Programs Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+h2 {
+    color: var(--gallop-blue);
+    border-left: 5px solid var(--gallop-blue);
+    padding-left: 15px;
 }
 
 .card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 10px;
-    border-top: 6px solid var(--gold);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card h3 {
-    color: var(--green);
-    margin-top: 0;
-    font-size: 1.5rem;
-}
-
-/* Contact Section */
-#contact {
-    background-color: var(--green);
-    color: var(--white);
+    background: var(--light-bg);
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
+    transition: 0.3s;
 }
 
-#contact h2 {
-    color: var(--gold);
-    border-color: var(--gold);
+.card:hover { border-color: var(--gallop-blue); transform: translateY(-5px); }
+
+/* Basic Photo Carousel Animation */
+.carousel {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
 }
 
-.contact-box {
-    margin-top: 20px;
-    font-size: 1.2rem;
+.slide {
+    width: 100%;
+    position: absolute;
+    animation: fade 12s infinite;
+    opacity: 0;
 }
 
-/* --- Footer --- */
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    33% { opacity: 1; }
+    53% { opacity: 0; }
+    100% { opacity: 0; }
+}
+/* Note: You'd adjust delays for each image in JS or more CSS rules */
+
 footer {
-    padding: 2rem;
+    background: #222;
+    color: white;
     text-align: center;
-    background: #111;
-    color: #888;
-    font-size: 0.9rem;
+    padding: 40px;
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 900px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    h2 {
-        display: inline-block;
-        border-left: none;
-        border-bottom: 4px solid var(--gold);
-        padding-left: 0;
-        padding-bottom: 5px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    nav {
-        justify-content: center;
-    }
-    
-    nav ul { 
-        display: none; /* Keep mobile UI clean; users usually scroll */
-    }
-
-    section {
-        padding: 3rem 5%;
-    }
-}
+.social-links a { color: #5dade2; text-decoration: none; margin: 0 10px; }
