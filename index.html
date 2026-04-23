@@ -3,98 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#004d40">
-    <meta name="description" content="Gallop Academy - Elite Athletic Training and National Medalist Producer">
-    <title>Gallop Academy | Elite Training</title>
+    <title>Gallop Athletic Academy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Gallop Academy</div>
+        <div class="logo">
+            <img src="icons/gallop_logo.png" alt="Gallop Logo">
+        </div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#programs">Programs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="icons/gallop_logo.png" alt="Gallop Academy Logo" class="aligned-logo">
-            </div>
-            <h1>Gallop Academy</h1>
-            <p class="tagline">Conglomeration of prospective athletes</p>
-        </div>
+        <h1>GALLOP ATHLETIC ACADEMY</h1>
+        <p>Conglomeration of Prospective Athletes</p>
     </header>
 
-    <main>
-        <section id="about">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2>About Us</h2>
-                    <p class="summary">
-                        Gallop Academy is a premier training institution excelling in athletic development. 
-                        Dedicated to fostering elite talent, our programs have successfully produced 
-                        numerous <strong>National Medalists</strong>. We combine world-class coaching 
-                        with holistic wellness to prepare athletes for the highest levels of competition.
-                    </p>
-                </div>
-                <div class="about-image-wrapper">
-                    <img src="icons/about_photo.jpg" alt="Athletes in training" class="about-image">
-                </div>
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="carousel">
+            <img src="icons/about_photo.jpg" class="slide" alt="Academy Life">
+            <img src="icons/gallop.png" class="slide" alt="Training">
             </div>
-        </section>
+        <p>Gallop is dedicated to nurturing talent and pushing the boundaries of athletic excellence.</p>
+    </nav>
 
-        <section id="programs">
-            <div class="section-title">
-                <h2>Our Programs</h2>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Athletics</h3>
-                    <p>Professional track, field, and strength conditioning designed for peak competitive performance.</p>
-                </div>
-                <div class="card">
-                    <h3>Swimming</h3>
-                    <p>Technical stroke correction, speed drills, and endurance training for all levels.</p>
-                </div>
-                <div class="card">
-                    <h3>Pre & Post Natal</h3>
-                    <p>Expert-guided, safe, and effective exercise programs tailored for every stage of motherhood.</p>
-                </div>
-            </div>
-        </section>
+    <section id="programs">
+        <h2>Our Programs</h2>
+        <div class="program-grid">
+            <div class="card"><h3>Prenatal Fitness</h3></div>
+            <div class="card"><h3>Postnatal Recovery</h3></div>
+            <div class="card"><h3>Swimming Lessons</h3></div>
+            <div class="card"><h3>Athletics</h3></div>
+        </div>
+        
+        <h2>Products</h2>
+        <div class="product-grid">
+            <div class="card"><h3>E-Books</h3></div>
+            <div class="card"><h3>Progress Journal</h3></div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-box">
-                <p>Join the academy of champions. Reach out to us today.</p>
-                <p>Email: <strong>hello@gallopacademy.com</strong></p>
-            </div>
-        </section>
-    </main>
+    <section id="achievements">
+        <h2>Our Achievements</h2>
+        <ul>
+            <li>Regional Athletic Champions 2025</li>
+            <li>Over 500+ Certified Athletes</li>
+        </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Gallop Academy. All rights reserved.</p>
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <div class="social-links">
+            <a href="https://wa.me/yournumber">WhatsApp</a> |
+            <a href="https://instagram.com/yourprofile">Instagram</a> |
+            <a href="mailto:info@gallop.com">Email Us</a>
+        </div>
     </footer>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Pointing to your GitHub repository subfolder
-                navigator.serviceWorker.register('/Gallop/service-worker.js')
-                    .then(reg => {
-                        console.log('Gallop PWA Service Worker registered!');
-                    })
-                    .catch(err => {
-                        console.log('Service Worker registration failed:', err);
-                    });
-            });
-        }
-    </script>
+    <script src="service-worker.js"></script>
 </body>
 </html>
