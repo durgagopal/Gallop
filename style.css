@@ -1,7 +1,11 @@
+/* --- Root Variables & Base Styles --- */
 :root {
     --gallop-blue: #0054A6;
     --light-bg: #f4f8fb;
     --white: #ffffff;
+    --whatsapp-green: #25D366;
+    --text-dark: #1a202c;
+    --text-gray: #4a5568;
 }
 
 body {
@@ -9,8 +13,10 @@ body {
     margin: 0;
     color: #333;
     line-height: 1.6;
+    background-color: var(--white);
 }
 
+/* --- Navigation --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -24,7 +30,9 @@ nav {
 }
 
 nav .logo img { height: 50px; }
+
 nav ul { display: flex; list-style: none; }
+
 nav ul li a {
     text-decoration: none;
     color: var(--gallop-blue);
@@ -32,6 +40,7 @@ nav ul li a {
     margin-left: 20px;
 }
 
+/* --- Header --- */
 header {
     background: var(--gallop-blue);
     color: white;
@@ -41,142 +50,33 @@ header {
 
 section { padding: 40px 10%; }
 
-/* Athletics Section Styling */
-.athletics-container {
-    max-width: 900px;
-    margin: 0 auto;
+h2 {
+    color: var(--gallop-blue);
+    border-left: 5px solid var(--gallop-blue);
+    padding-left: 15px;
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-    .video-grid { grid-template-columns: 1fr; }
-}
-
-.video-grid video {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Product Section Styling */
-/* Premium Product Card */
-.product-premium-card {
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    border: 1px solid #e0e6ed;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 700px;
-    margin: 20px auto;
-    gap: 30px;
-}
-
-.product-cta h3 {
-    margin: 0 0 10px 0;
-    color: #1a202c;
-    font-size: 1.4rem;
-}
-
-.product-cta p {
-    margin-bottom: 20px;
-    color: #4a5568;
-    font-size: 1rem;
-}
-
-/* Genuine WhatsApp Button */
-.whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-}
-
-.whatsapp-btn:hover {
-    background-color: #1ebe57;
-    transform: translateY(-2px);
-}
-
-.btn-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-/* Small Preview Animation */
-.preview-box {
-    width: 100px;
-    height: 130px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 6px;
-    background: #f7fafc;
-    flex-shrink: 0;
-}
-
-.preview-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0;
-    animation: slideLoop 6s infinite;
-}
-
-.preview-img:nth-child(1) { animation-delay: 0s; }
-.preview-img:nth-child(2) { animation-delay: 3s; }
-
-@keyframes slideLoop {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .product-premium-card {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* Updated Carousel for About Page */
+/* --- About Section & Carousel (Updated for No Cropping) --- */
 .carousel {
     width: 100%;
-    height: 500px; /* Increased height to give images more room */
+    height: 500px; /* Increased height for better visibility */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 20px;
-    background-color: #000; /* Black background to fill gaps if image is narrow */
+    background-color: #000; /* Letterboxing for different aspect ratios */
 }
 
 .slide {
     width: 100%;
     height: 100%;
-    /* Changed from cover to contain to prevent cropping */
-    object-fit: contain; 
+    object-fit: contain; /* Prevents cropping; shows entire image */
     position: absolute;
     opacity: 0;
     animation: fadeLoop 30s infinite;
 }
 
-/* Image timing for 9 images [cite: 10] */
+/* Staggered timing for 9 images (1 to 10 excluding 7) */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 3.3s; }
 .slide:nth-child(3) { animation-delay: 6.6s; }
@@ -195,6 +95,19 @@ section { padding: 40px 10%; }
     100% { opacity: 0; }
 }
 
+.testimonials {
+    background: #f9f9f9;
+    border-left: 5px solid var(--gallop-blue);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* --- Training Section (Athletics & Videos) --- */
+.athletics-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .card {
     background: var(--light-bg);
     border: 1px solid #ddd;
@@ -202,11 +115,37 @@ section { padding: 40px 10%; }
     border-radius: 8px;
 }
 
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 40px;
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.social-links a { color: #5dade2; text-decoration: none; margin: 0 10px; }
+.video-grid video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Premium Product Section (Appealing & Genuine) --- */
+.product-premium-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 20px auto;
+    gap: 30px;
+}
+
+.preview-box {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f7fafc
