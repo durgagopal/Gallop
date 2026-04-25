@@ -25,7 +25,6 @@ nav {
 }
 
 nav .logo img { height: 50px; }
-
 nav ul { display: flex; list-style: none; }
 nav ul li a {
     text-decoration: none;
@@ -43,47 +42,60 @@ header {
 
 section { padding: 40px 10%; }
 
-h2 {
-    color: var(--gallop-blue);
-    border-left: 5px solid var(--gallop-blue);
-    padding-left: 15px;
-}
-
 .card {
     background: var(--light-bg);
     border: 1px solid #ddd;
     padding: 20px;
+    margin: 10px;
     border-radius: 8px;
     text-align: center;
-    transition: 0.3s;
 }
 
-.card:hover { border-color: var(--gallop-blue); transform: translateY(-5px); }
+.program-icon { width: 100px; height: auto; margin-bottom: 10px; }
 
-/* Basic Photo Carousel Animation */
+/* Photo Loop Animation */
 .carousel {
     width: 100%;
-    height: 300px;
-    overflow: hidden;
+    height: 400px;
     position: relative;
-    background: #eee;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .slide {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    animation: fade 12s infinite;
     opacity: 0;
+    animation: loopImages 27s infinite;
 }
 
-@keyframes fade {
+/* Staggering the 9 images */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 3s; }
+.slide:nth-child(3) { animation-delay: 6s; }
+.slide:nth-child(4) { animation-delay: 9s; }
+.slide:nth-child(5) { animation-delay: 12s; }
+.slide:nth-child(6) { animation-delay: 15s; }
+.slide:nth-child(7) { animation-delay: 18s; }
+.slide:nth-child(8) { animation-delay: 21s; }
+.slide:nth-child(9) { animation-delay: 24s; }
+
+@keyframes loopImages {
     0% { opacity: 0; }
-    20% { opacity: 1; }
-    33% { opacity: 1; }
-    53% { opacity: 0; }
+    5% { opacity: 1; }
+    11% { opacity: 1; }
+    16% { opacity: 0; }
     100% { opacity: 0; }
 }
-/* Note: You'd adjust delays for each image in JS or more CSS rules */
+
+.testimonials {
+    margin-top: 30px;
+    padding: 20px;
+    background: #eef;
+    border-left: 5px solid var(--gallop-blue);
+}
 
 footer {
     background: #222;
