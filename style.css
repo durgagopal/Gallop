@@ -73,26 +73,28 @@ section { padding: 40px 10%; }
     border-radius: 10px;
 }
 
-/* Carousel Animation for About Page */
+/* Updated Carousel for About Page */
 .carousel {
     width: 100%;
-    height: 400px;
+    height: 500px; /* Increased height to give images more room */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 20px;
+    background-color: #000; /* Black background to fill gaps if image is narrow */
 }
 
 .slide {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* Changed from cover to contain to prevent cropping */
+    object-fit: contain; 
     position: absolute;
     opacity: 0;
     animation: fadeLoop 30s infinite;
 }
 
-/* Image timing for 9 images */
+/* Image timing for 9 images [cite: 10] */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 3.3s; }
 .slide:nth-child(3) { animation-delay: 6.6s; }
