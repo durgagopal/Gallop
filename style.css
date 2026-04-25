@@ -126,6 +126,34 @@ section { padding: 40px 10%; }
     border-bottom: 1px dashed #25D366;
 }
 
+/* J1 shows first, then J2 */
+.preview-img:nth-child(1) { animation-delay: 0s; }
+.preview-img:nth-child(2) { animation-delay: 4s; }
+
+@keyframes nextSlide {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.whatsapp-order {
+    margin-top: 5px !important;
+    color: #25D366; /* WhatsApp Brand Green */
+}
+
+.whatsapp-order a {
+    color: #25D366;
+    text-decoration: none;
+    border-bottom: 1px dashed #25D366;
+}
+
 /* Staggering J1 and J2 */
 .preview-slide:nth-child(1) { animation-delay: 0s; }
 .preview-slide:nth-child(2) { animation-delay: 3s; }
