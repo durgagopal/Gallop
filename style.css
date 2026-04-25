@@ -65,12 +65,59 @@ section { padding: 40px 10%; }
 }
 
 /* Product Section Styling */
-.single-product-line {
-    text-align: center;
+/* Product Section Single Line with Loop */
+.product-container-single {
+    display: flex;
+    align-items: center;
     background: var(--light-bg);
     border: 2px dashed var(--gallop-blue);
     padding: 20px;
     border-radius: 10px;
+    gap: 30px;
+}
+
+.product-preview-loop {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.preview-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    opacity: 0;
+    animation: productFade 6s infinite;
+}
+
+/* Staggering J1 and J2 */
+.preview-slide:nth-child(1) { animation-delay: 0s; }
+.preview-slide:nth-child(2) { animation-delay: 3s; }
+
+@keyframes productFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    45% { opacity: 1; }
+    55% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+.buy-text {
+    color: var(--gallop-blue);
+    font-weight: bold;
+}
+
+.buy-text a {
+    text-decoration: none;
+    color: #25D366; /* WhatsApp Green */
 }
 
 /* Updated Carousel for About Page */
