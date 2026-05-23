@@ -3,8 +3,8 @@
   "short_name": "Gallop",
   "start_url": "/Gallop/",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#E31B23",
+  "background_color": "#ffffff",
+  "theme_color": "#E30613",
   "description": "Elite athletic training producing National Medalists.",
   "icons": [
     {
