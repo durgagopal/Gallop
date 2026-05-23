@@ -1,92 +1,83 @@
-// ===== NAVIGATION TOGGLE (Mobile) =====
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // ===== AUTOMATED BG CAROUSEL ENGINE =====
+    const slides = document.querySelectorAll('.carousel .slide');
+    let currentSlide = 0;
+    const slideIntervalTime = 3500; // 3.5 seconds cadence rotation
 
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+    function autoAdvanceSlides() {
+        if (slides.length === 0) return;
+        
+        // Clear out current activation markers
+        slides[currentSlide].classList.remove('active');
+        
+        // Safe mathematical incremental cycle index loop boundary check
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Apply activation class token values
+        slides[currentSlide].classList.add('active');
+    }
 
-// Close nav on link click (mobile)
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+    // Initialize auto shifting cycle instance
+    setInterval(autoAdvanceSlides, slideIntervalTime);
+
+
+    // ===== TESTIMONIAL CYCLIC TRANSITION ENGINE =====
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentTestimonial = 0;
+    const testimonialIntervalTime = 5000; // 5 seconds static focus timeline
+
+    function rotateTestimonials() {
+        if (testimonials.length <= 1) return;
+        
+        testimonials[currentTestimonial].classList.remove('active');
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        testimonials[currentTestimonial].classList.add('active');
+    }
+
+    setInterval(rotateTestimonials, testimonialIntervalTime);
+
+
+    // ===== INTERACTIVE TRAINING PROGRAM TAB SYSTEM RUNTIME =====
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const targetedTabId = button.getAttribute('data-tab');
+
+            // Strip active tags from all selectors inside the matching structural elements
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Append active states to the clicked tab element context triggers
+            button.classList.add('active');
+            const targetedDomNode = document.getElementById(targetedTabId);
+            if (targetedDomNode) {
+                targetedDomNode.classList.add('active');
+            }
+        });
     });
-});
 
-// ===== IMAGE CAROUSEL =====
-const slides = document.querySelectorAll('.carousel .slide');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-const dotsContainer = document.querySelector('.carousel-dots');
-let currentSlide = 0;
-let carouselInterval;
 
-// Create dots
-slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(i));
-    dotsContainer.appendChild(dot);
-});
+    // ===== SMOOTH ANCHOR INTERCEPT SYSTEM SCROLL MATRIX =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchorLink => {
+        anchorLink.addEventListener('click', function(e) {
+            const targetAnchorId = this.getAttribute('href');
+            const targetElementNode = document.querySelector(targetAnchorId);
+            
+            if (targetElementNode) {
+                e.preventDefault();
+                
+                // Account dynamically for sticky header collision risks
+                const navigationOffsetHeight = document.querySelector('nav').offsetHeight;
+                const computedTargetPosition = targetElementNode.offsetTop - navigationOffsetHeight;
 
-function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    document.querySelectorAll('.carousel-dots .dot')[currentSlide].classList.remove('active');
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    document.querySelectorAll('.carousel-dots .dot')[currentSlide].classList.add('active');
-}
-
-function nextSlide() { goToSlide(currentSlide + 1); }
-function prevSlide() { goToSlide(currentSlide - 1); }
-
-prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
-
-function resetInterval() {
-    clearInterval(carouselInterval);
-    carouselInterval = setInterval(nextSlide, 4000);
-}
-
-// Auto-advance every 4 seconds
-carouselInterval = setInterval(nextSlide, 4000);
-
-// ===== TESTIMONIAL ROTATION =====
-const testimonials = document.querySelectorAll('.testimonial');
-let currentTestimonial = 0;
-
-setInterval(() => {
-    testimonials[currentTestimonial].classList.remove('active');
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    testimonials[currentTestimonial].classList.add('active');
-}, 5000);
-
-// ===== TRAINING TABS =====
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active from all
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(tc => tc.classList.remove('active'));
-        // Activate clicked tab
-        btn.classList.add('active');
-        const target = document.getElementById(btn.dataset.tab);
-        if (target) target.classList.add('active');
-    });
-});
-
-// ===== SMOOTH SCROLL for nav links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            e.preventDefault();
-            const navHeight = document.querySelector('nav').offsetHeight;
-            const targetPos = target.offsetTop - navHeight;
-            window.scrollTo({ top: targetPos, behavior: 'smooth' });
-        }
+                window.scrollTo({
+                    top: computedTargetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
