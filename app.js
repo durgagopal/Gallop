@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== AUTOMATED BG CAROUSEL ENGINE WITH ERROR FAULT PROTECTION =====
+    // ===== AUTOMATED BG CAROUSEL ENGINE WITH RECONSTRUCTED FALLBACKS =====
     const slides = document.querySelectorAll('.carousel .slide');
     let currentSlide = 0;
     const slideIntervalTime = 3500;
@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[currentSlide].classList.add('active');
     }
 
-    // Explicit error filter checking if un-uploaded images break the rendering cycle
+    // Fallback filter script checking if files aren't physically present on your hosting platform
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
-            console.warn(`File missing from repository path context: ${this.src}. Dropping from animation pool loop safely.`);
+            console.warn(`File pathway target omitted from directory files: ${this.src}`);
             this.remove(); 
         });
     });
@@ -32,24 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTestimonial = (currentTestimonial + 1) % testimonials.length;
         testimonials[currentTestimonial].classList.add('active');
     }, 5000);
-
-    // ===== TAB SYSTEM ACTIONS =====
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetedTabId = button.getAttribute('data-tab');
-            
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-            
-            button.classList.add('active');
-            const targetNode = document.getElementById(targetedTabId);
-            if (targetNode) {
-                targetNode.classList.add('active');
-            }
-        });
-    });
 
     // ===== SMOOTH SCROLL ROUTING =====
     document.querySelectorAll('a[href^="#"]').forEach(anchorLink => {
