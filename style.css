@@ -23,7 +23,7 @@ body {
     background-color: var(--white);
 }
 
-/* --- Navigation & Top Left Logo Layout (Fixed Alignment & Sizing) --- */
+/* --- Clean Typography Navigation Layout (Fixed Alignment & Sizing) --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -41,7 +41,7 @@ nav .logo {
     display: flex;
     align-items: center;
     background-color: var(--gallop-red); 
-    padding: 10px 15px;
+    padding: 10px 20px;
 }
 
 nav .logo img {
@@ -354,7 +354,7 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* --- Footer Contacts Deck (Fixed to White Background Alignment) --- */
+/* --- Contact Us Section Background Shift (Fixed to White Background) --- */
 footer {
     background: var(--white); 
     border-top: 1px solid var(--border-gray);
