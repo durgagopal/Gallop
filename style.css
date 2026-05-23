@@ -162,12 +162,14 @@ h2 {
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
     z-index: 1;
 }
 
 .slide.active {
-    opacity: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
     z-index: 2;
 }
 
@@ -272,19 +274,6 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     background-color: #000;
-}
-
-.tab-photo-box {
-    margin-top: 25px;
-    max-width: 400px;
-}
-
-.program-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-gray);
 }
 
 .booking-cta {
