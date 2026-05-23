@@ -1,11 +1,11 @@
 {
   "name": "Gallop Athletic Academy",
-  "short_name": "Gallop Academy",
+  "short_name": "Gallop",
   "start_url": "/Gallop/",
   "display": "standalone",
-  "background_color": "#E31E24",
-  "theme_color": "#E31E24",
-  "description": "Elite physical performance, track conditioning and maternal recovery programs.",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E31B23",
+  "description": "Elite athletic training producing National Medalists.",
   "icons": [
     {
       "src": "icons/icon-192.png",
