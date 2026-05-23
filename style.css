@@ -1,4 +1,4 @@
-/* --- Root Core Theme Variable Definitions (Red & White Master Theme Palette) --- */
+/* --- Root Core Theme Variable Definitions (Red & White Master Theme) --- */
 :root {
     --gallop-red: #E30613;
     --gallop-dark: #111111;
@@ -23,7 +23,7 @@ body {
     background-color: var(--white);
 }
 
-/* --- Navigation & Dynamic Top Left High-Resolution Logo Scaling Layout --- */
+/* --- Navigation & Top Left Logo Layout --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -38,7 +38,7 @@ nav {
 }
 
 nav .logo img { 
-    height: 85px; /* Scaled up logo rendering safely for visibility metrics */
+    height: 85px; 
     width: auto;
     display: block;
 }
@@ -64,7 +64,7 @@ nav ul li a:hover {
     color: var(--gallop-red);
 }
 
-/* --- Hero Showcase Dynamic Entry Area --- */
+/* --- Hero Banner --- */
 header {
     background: var(--gallop-red);
     color: var(--white);
@@ -135,7 +135,7 @@ h2 {
     border: 1px solid var(--border-gray);
 }
 
-/* --- Infinite Automated Smooth Image Fading Transition Engine CSS --- */
+/* --- Image Fading Transition Carousel --- */
 .carousel {
     width: 100%;
     height: 480px;
@@ -164,21 +164,19 @@ h2 {
     z-index: 2;
 }
 
-/* --- Testimonials Real Estate Dynamic Frame Layouts --- */
+/* --- Testimonials --- */
 .testimonials {
     background: var(--card-bg);
     border-left: 6px solid var(--gallop-red);
     padding: 25px 30px;
     margin-top: 40px;
     border-radius: 0 8px 8px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .testimonials h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     color: var(--text-dark);
 }
 
@@ -193,26 +191,24 @@ h2 {
     display: block;
 }
 
-/* --- Premium Tab Control Strip UI Elements --- */
+/* --- Dynamic Tab Menu Configuration --- */
 .tab-menu {
     display: flex;
     border-bottom: 2px solid var(--border-gray);
     margin-bottom: 30px;
     gap: 15px;
-    overflow-x: auto;
 }
 
 .tab-btn {
     background: none;
     border: none;
     padding: 14px 25px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-gray);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     border-bottom: 3px solid transparent;
-    white-space: nowrap;
 }
 
 .tab-btn:hover {
@@ -255,7 +251,6 @@ h2 {
 .card p {
     color: var(--text-gray);
     font-size: 1.05rem;
-    max-width: 850px;
 }
 
 .video-grid {
@@ -274,7 +269,7 @@ h2 {
 
 .tab-photo-box {
     margin-top: 25px;
-    max-width: 450px;
+    max-width: 400px;
 }
 
 .program-img {
@@ -297,7 +292,7 @@ h2 {
     font-weight: 700;
 }
 
-/* --- Sports Journal Premium Interface Box Architecture --- */
+/* --- Sports Journal Card --- */
 .product-premium-card {
     display: flex;
     align-items: center;
@@ -321,19 +316,8 @@ h2 {
     width: 130px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 166px rgba(0,0,0,0.1);
     border: 1px solid var(--border-gray);
-    transition: transform 0.2s ease;
-}
-
-.preview-img:hover {
-    transform: scale(1.04);
-}
-
-.product-cta h3 {
-    font-size: 1.45rem;
-    color: var(--text-dark);
-    margin-bottom: 12px;
 }
 
 .famous-quote {
@@ -345,12 +329,6 @@ h2 {
     font-size: 1.1rem;
 }
 
-.product-cta p {
-    color: var(--text-gray);
-    margin-bottom: 20px;
-}
-
-/* High Visibility Flat Premium Action Button UI Configuration */
 .buy-btn {
     display: inline-block;
     background: var(--gallop-red);
@@ -360,18 +338,16 @@ h2 {
     border-radius: 8px;
     font-weight: 700;
     font-size: 1.05rem;
-    letter-spacing: 0.5px;
     box-shadow: 0 4px 14px rgba(227, 6, 19, 0.25);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .buy-btn:hover {
     background: #c30510;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(227, 6, 19, 0.35);
 }
 
-/* --- Professional Contact Grid Layout Component Footer --- */
+/* --- Footer Contacts Deck --- */
 footer {
     background: var(--gallop-dark);
     color: var(--white);
@@ -386,7 +362,6 @@ footer h2 {
 .contact-sub {
     color: #a0aec0;
     margin-bottom: 30px;
-    font-size: 1.05rem;
 }
 
 .social-grid {
@@ -406,11 +381,10 @@ footer h2 {
     font-weight: 600;
     padding: 10px;
     border-radius: 6px;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .social-item a:hover {
-    color: var(--white);
     background: rgba(255,255,255,0.04);
 }
 
@@ -426,53 +400,16 @@ footer h2 {
     padding-top: 20px;
     text-align: center;
     color: #718096;
-    font-size: 0.9rem;
 }
 
-/* --- Media Target Responsive Breakpoints Engine --- */
-@media(max-width: 992px) {
-    .product-premium-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    .famous-quote {
-        border-left: none;
-        border-top: 2px solid var(--gallop-red);
-        border-bottom: 2px solid var(--gallop-red);
-        padding: 10px 0;
-    }
-    .preview-box {
-        justify-content: center;
-    }
-}
-
+/* --- Responsive Engine --- */
 @media(max-width: 768px) {
-    .about-split-container {
+    .about-split-container, .product-premium-card, .video-grid {
         flex-direction: column;
         align-items: center;
-    }
-    .about-side-photo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .video-grid {
-        grid-template-columns: 1fr;
     }
     nav {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 20px;
-    }
-    nav ul li a {
-        margin: 0 12px;
-        font-size: 0.85rem;
-    }
-    header h1 {
-        font-size: 2rem;
-    }
-    .carousel {
-        height: 320px;
     }
 }
