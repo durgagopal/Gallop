@@ -3,9 +3,9 @@
   "short_name": "Gallop Academy",
   "start_url": "/Gallop/",
   "display": "standalone",
-  "background_color": "#0054A6",
-  "theme_color": "#0054A6",
-  "description": "Elite structural athletic development programs promoting discipline and prospective sportsmanship.",
+  "background_color": "#E31E24",
+  "theme_color": "#E31E24",
+  "description": "Elite physical performance, track conditioning and maternal recovery programs.",
   "icons": [
     {
       "src": "icons/icon-192.png",
