@@ -11,7 +11,7 @@
 
     <nav>
         <div class="logo">
-            <img src="icons/PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Athletic Academy Logo">
+            <img src="icons/PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Logo">
         </div>
         <ul>
             <li><a href="#about">About</a></li>
@@ -23,14 +23,14 @@
 
     <header>
         <h1>GALLOP ATHLETIC ACADEMY</h1>
-        <p>Conglomeration of Prospective Athletes</p>
+        <p>CONGLOMERATION OF PROSPECTIVE ATHLETES</p>
     </header>
 
     <section id="about">
-        <h2>About Us</h2>
+        <h2>ABOUT US</h2>
         
         <div class="about-split-container">
-            <div class="about-text-content">
+            <div class="about-text">
                 <p>Established with a passion for sports and a vision to create future champions, Gallop Athletic Academy has been a guiding force in developing talented athletes and promoting excellence in athletics through professional training, discipline, and sportsmanship.</p>
                 <p>The academy aims to create a strong foundation for aspiring athletes by providing structured coaching, fitness development, and opportunities to participate in district, state, and national-level competitions.</p>
                 <p>With a vision to inspire passion for sports and holistic development, Gallop Athletic Academy focuses not only on athletic performance but also on character building, teamwork, leadership, and perseverance.</p>
@@ -38,28 +38,24 @@
                 <p>Over the years, the academy has become a hub for emerging sports talent, producing athletes who consistently excel in various track and field events.</p>
                 <p>Through continuous training programs, motivational initiatives, and a supportive environment, Gallop Athletic Academy strives to shape future champions and foster a culture of fitness and excellence in the community.</p>
             </div>
-            <div class="about-featured-graphic">
-                <img src="icons/about_photo.jpg" alt="About Gallop Academy" class="small-inline-photo">
+            <div class="about-side-photo">
+                <img src="icons/about_photo.jpg" alt="About Gallop Team">
             </div>
         </div>
 
         <div class="carousel">
-            <img src="icons/1.jpeg" class="slide" alt="Gallop Team Gallery 1">
-            <img src="icons/2.jpeg" class="slide" alt="Gallop Team Gallery 2">
-            <img src="icons/3.jpeg" class="slide" alt="Gallop Team Gallery 3">
-            <img src="icons/4.jpeg" class="slide" alt="Gallop Team Gallery 4">
-            <img src="icons/5.jpeg" class="slide" alt="Gallop Team Gallery 5">
-            <img src="icons/6.jpeg" class="slide" alt="Gallop Team Gallery 6">
-            <img src="icons/9.jpeg" class="slide" alt="Gallop Team Gallery 7">
-            <img src="icons/10.jpeg" class="slide" alt="Gallop Team Gallery 8">
-            <img src="icons/13.jpeg" class="slide" alt="Gallop Team Gallery 9">
-            <img src="icons/14.jpeg" class="slide" alt="Gallop Team Gallery 10">
-            <img src="icons/15.jpeg" class="slide" alt="Gallop Team Gallery 11">
-            <img src="icons/16.jpeg" class="slide" alt="Gallop Team Gallery 12">
-            <img src="icons/1.1.jpeg" class="slide" alt="Gallop Team Gallery 13">
-            <img src="icons/3.jpeg" class="slide" alt="Gallop Team Gallery 14">
-            <img src="icons/5.jpeg" class="slide" alt="Gallop Team Gallery 15">
-            <img src="icons/6.jpeg" class="slide" alt="Gallop Team Gallery 16">
+            <img src="icons/1.jpeg" class="slide" alt="Gallop 1">
+            <img src="icons/2.jpeg" class="slide" alt="Gallop 2">
+            <img src="icons/3.jpeg" class="slide" alt="Gallop 3">
+            <img src="icons/4.jpeg" class="slide" alt="Gallop 4">
+            <img src="icons/5.jpeg" class="slide" alt="Gallop 5">
+            <img src="icons/6.jpeg" class="slide" alt="Gallop 6">
+            <img src="icons/9.jpeg" class="slide" alt="Gallop 9">
+            <img src="icons/10.jpeg" class="slide" alt="Gallop 10">
+            <img src="icons/13.jpeg" class="slide" alt="Gallop 13">
+            <img src="icons/14.jpeg" class="slide" alt="Gallop 14">
+            <img src="icons/15.jpeg" class="slide" alt="Gallop 15">
+            <img src="icons/16.jpeg" class="slide" alt="Gallop 16">
         </div>
 
         <div class="testimonials">
@@ -69,50 +65,66 @@
     </section>
 
     <section id="training">
-        <h2>Training Program</h2>
+        <h2>TRAINING PROGRAM</h2>
         
-        <div class="tabs-navigation-row">
-            <button class="tab-trigger-button active" onclick="switchTrainingTab(event, 'athletics-panel')">Athletics</button>
-            <button class="tab-trigger-button" onclick="switchTrainingTab(event, 'mindfulness-panel')">Mindfulness</button>
-            <button class="tab-trigger-button" onclick="switchTrainingTab(event, 'prenatal-panel')">Prenatal Fitness</button>
-            <button class="tab-trigger-button" onclick="switchTrainingTab(event, 'postnatal-panel')">Postnatal Recovery</button>
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="openTab(event, 'athletics-tab')">Athletics</button>
+            <button class="tab-btn" onclick="openTab(event, 'mindfulness-tab')">Mindfulness</button>
+            <button class="tab-btn" onclick="openTab(event, 'prenatal-tab')">Prenatal Fitness</button>
+            <button class="tab-btn" onclick="openTab(event, 'postnatal-tab')">Postnatal Recovery</button>
         </div>
-        
-        <div class="tabs-viewport-wrapper">
-            
-            <div id="athletics-panel" class="training-tab-content active">
-                <div class="card athletics-card">
-                    <h3>Athletics</h3>
-                    <p>Discipline, training, and hardworking young athletes are the pillars of our academy. We push limits to achieve excellence.</p>
-                    <div class="video-grid">
-                        <video controls><source src="icons/11.mp4" type="video/mp4"></video>
-                        <video controls><source src="icons/12.mp4" type="video/mp4"></video>
-                    </div>
+
+        <div id="athletics-tab" class="tab-content active-content">
+            <div class="card athletics-card">
+                <h3>Athletics</h3>
+                <p>Discipline, training, and hardworking young athletes are the pillars of our academy. We push limits to achieve excellence.</p>
+                <div class="video-grid">
+                    <video controls><source src="icons/11.mp4" type="video/mp4"></video>
+                    <video controls><source src="icons/12.mp4" type="video/mp4"></video>
                 </div>
             </div>
+        </div>
 
-            <div id="mindfulness-panel" class="training-tab-content">
-                <div class="card basic-info-card">
-                    <h3>Mindfulness</h3>
-                    <p>Mental conditioning, composure, and focus protocols designed explicitly for competitive field activities and overall lifestyle balance.</p>
+        <div id="mindfulness-tab" class="tab-content">
+            <div class="card">
+                <h3>Mindfulness</h3>
+                <p>Mental resilience and focus training crafted to optimize game-day execution and structural cognitive composure.</p>
+            </div>
+        </div>
+
+        <div id="prenatal-tab" class="tab-content">
+            <div class="card">
+                <h3>Prenatal Fitness</h3>
+                <p>Safe and structured coaching strategies engineered to maintain core capacity and athletic health levels during pregnancy.</p>
+                <div class="tab-photo-box">
+                    <img src="icons/P1.png" alt="Prenatal Fitness Program" class="program-img">
                 </div>
             </div>
+        </div>
 
-            <div id="prenatal-panel" class="training-tab-content">
-                <div class="card standard-product-card">
-                    <h3>Prenatal Fitness</h3>
-                    <p>Safe, dynamic workout schedules managed explicitly for expecting mothers to maintain athletic health, strength, and overall flexibility.</p>
-                    <div class="tab-image-container">
-                        <img src="icons/P1.png" alt="Prenatal Fitness and Wellness Setup" class="fitness-showcase-img">
-                    </div>
+        <div id="postnatal-tab" class="tab-content">
+            <div class="card">
+                <h3>Postnatal Recovery</h3>
+                <p>Gradual re-conditioning programs engineered to safely return your body to primary peak operational athletic baselines.</p>
+                <div class="tab-photo-box">
+                    <img src="icons/P1.png" alt="Postnatal Recovery Program" class="program-img">
                 </div>
             </div>
+        </div>
 
-            <div id="postnatal-panel" class="training-tab-content">
-                <div class="card standard-product-card">
-                    <h3>Postnatal Recovery</h3>
-                    <p>Structured, physiological step-rehab frameworks dedicated safely to structural recovery, strength re-conditioning, and athletic return.</p>
-                    <div class="tab-image-container">
-                        <img src="icons/P1.png" alt="Postnatal Recovery Workouts" class="fitness-showcase-img">
-                    </div>
-                </div>
+        <p class="booking-cta">For bookings and further details, please <a href="#contact">Contact Us</a>.</p>
+    </section>
+
+    <section id="products">
+        <h2>SPORTS JOURNAL</h2>
+        <div class="product-premium-card">
+            <div class="preview-box">
+                <img src="icons/J1.png" class="preview-img" alt="Journal Preview 1">
+                <img src="icons/J2.png" class="preview-img" alt="Journal Preview 2">
+            </div>
+
+            <div class="product-cta">
+                <h3>Journal (keep track of your progress every single day)</h3>
+                <blockquote>"The only track you should worry about is your own progress."</blockquote>
+                <p>Get your professional printable copy and reach your goals faster.</p>
+                <a href="https://gopala4.gumroad.com/l/gallop" target="_blank" class="buy-btn">
