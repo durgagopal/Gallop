@@ -6,125 +6,191 @@
     <title>Gallop Athletic Academy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" type="image/png">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="icons/PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Logo">
+<nav>
+    <div class="logo">
+        <img src="PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Athletic Academy Logo">
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>GALLOP ATHLETIC ACADEMY</h1>
+    <p class="tagline">Conglomeration of Prospective Athletes</p>
+</header>
+
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about">
+    <h2>About Us</h2>
+
+    <div class="about-content">
+        <div class="about-text">
+            <p>Established with a passion for sports and a vision to create future champions, <strong>Gallop Athletic Academy</strong> has been a guiding force in developing talented athletes across disciplines.</p>
+            <p>With a focus on athletic performance, character building, and holistic development, the academy inspires passion for sports at every level — from youth to professional.</p>
+            <p>Over the years, Gallop has become a hub for emerging sports talent, producing athletes who consistently excel in track and field events at state, national, and international levels.</p>
         </div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#training">Training Program</a></li>
-            <li><a href="#products">Sports Journal</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
+        <div class="about-photo">
+            <img src="WhatsApp Image 2026-04-11 at 12.27.11 PM.jpeg" alt="Gallop Athletic Academy">
+        </div>
+    </div>
 
-    <header>
-        <h1>GALLOP ATHLETIC ACADEMY</h1>
-        <p>CONGLOMERATION OF PROSPECTIVE ATHLETES</p>
-    </header>
+    <!-- Photo Carousel -->
+    <div class="carousel" aria-label="Academy photo gallery">
+        <div class="carousel-track">
+            <img src="1.jpeg" class="slide active" alt="Academy athletes training">
+            <img src="2.jpeg" class="slide" alt="Track practice">
+            <img src="3.jpeg" class="slide" alt="Team spirit">
+            <img src="4.jpeg" class="slide" alt="Competition day">
+            <img src="5.jpeg" class="slide" alt="Coaching session">
+            <img src="6.jpeg" class="slide" alt="Warm-up drills">
+            <img src="8.jpeg" class="slide" alt="Sprint training">
+            <img src="9.jpeg" class="slide" alt="Medal ceremony">
+            <img src="10.jpeg" class="slide" alt="Group workout">
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+        <div class="carousel-dots"></div>
+    </div>
 
-    <section id="about">
-        <h2>ABOUT US</h2>
-        
-        <div class="about-split-container">
-            <div class="about-text">
-                <p>Established with a passion for sports and a vision to create future champions, Gallop Athletic Academy has been a guiding force in developing talented athletes and promoting excellence in athletics through professional training, discipline, and sportsmanship.</p>
-                <p>The academy aims to create a strong foundation for aspiring athletes by providing structured coaching, fitness development, and opportunities to participate in district, state, and national-level competitions.</p>
-                <p>With a vision to inspire passion for sports and holistic development, Gallop Athletic Academy focuses not only on athletic performance but also on character building, teamwork, leadership, and perseverance.</p>
-                <p>Guided by experienced coaches and mentors, the academy encourages athletes to push their limits, achieve their goals, and represent their teams with pride and determination.</p>
-                <p>Over the years, the academy has become a hub for emerging sports talent, producing athletes who consistently excel in various track and field events.</p>
-                <p>Through continuous training programs, motivational initiatives, and a supportive environment, Gallop Athletic Academy strives to shape future champions and foster a culture of fitness and excellence in the community.</p>
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h3>What Our Athletes Say</h3>
+        <div class="testimonial-slider">
+            <blockquote class="testimonial active">
+                <p>"Gallop transformed my approach to fitness and discipline. The coaching here is world-class!"</p>
+                <cite>— Academy Athlete</cite>
+            </blockquote>
+            <blockquote class="testimonial">
+                <p>"From a beginner to a state-level medalist, Gallop's structured training made all the difference."</p>
+                <cite>— Track & Field Student</cite>
+            </blockquote>
+            <blockquote class="testimonial">
+                <p>"The discipline and habits I built at Gallop carry into every area of my life."</p>
+                <cite>— Junior Athlete</cite>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TRAINING SECTION ========== -->
+<section id="training">
+    <h2>Training Programs</h2>
+
+    <div class="training-tabs">
+        <button class="tab-btn active" data-tab="athletics">Athletics</button>
+        <button class="tab-btn" data-tab="prenatal">Prenatal Fitness</button>
+        <button class="tab-btn" data-tab="postnatal">Postnatal Recovery</button>
+    </div>
+
+    <!-- Athletics Tab -->
+    <div class="tab-content active" id="athletics">
+        <div class="card athletics-card">
+            <h3>Athletics Training</h3>
+            <p>Discipline, dedication, and determination define our athletic training program. Our young athletes are pushed to discover their limits, build endurance, and develop the mental toughness required to compete at the highest levels.</p>
+            <p>Under expert coaching, athletes master fundamentals of sprinting, long-distance running, field events, and overall athletic conditioning.</p>
+            <div class="video-grid">
+                <video controls preload="metadata" poster="1.jpeg">
+                    <source src="11.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+                <video controls preload="metadata" poster="2.jpeg">
+                    <source src="12.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
             </div>
-            <div class="about-side-photo">
-                <img src="icons/about_photo.jpg" alt="About Gallop Team">
-            </div>
         </div>
+    </div>
 
-        <div class="carousel">
-            <img src="icons/1.jpeg" class="slide" alt="Gallop 1">
-            <img src="icons/2.jpeg" class="slide" alt="Gallop 2">
-            <img src="icons/3.jpeg" class="slide" alt="Gallop 3">
-            <img src="icons/4.jpeg" class="slide" alt="Gallop 4">
-            <img src="icons/5.jpeg" class="slide" alt="Gallop 5">
-            <img src="icons/6.jpeg" class="slide" alt="Gallop 6">
-            <img src="icons/9.jpeg" class="slide" alt="Gallop 9">
-            <img src="icons/10.jpeg" class="slide" alt="Gallop 10">
-            <img src="icons/13.jpeg" class="slide" alt="Gallop 13">
-            <img src="icons/14.jpeg" class="slide" alt="Gallop 14">
-            <img src="icons/15.jpeg" class="slide" alt="Gallop 15">
-            <img src="icons/16.jpeg" class="slide" alt="Gallop 16">
-        </div>
-
-        <div class="testimonials">
-            <h3>Testimonials</h3>
-            <p>"Gallop transformed my approach to fitness and discipline!" - Academy Athlete</p>
-        </div>
-    </section>
-
-    <section id="training">
-        <h2>TRAINING PROGRAM</h2>
-        
-        <div class="tab-menu">
-            <button class="tab-btn active" onclick="openTab(event, 'athletics-tab')">Athletics</button>
-            <button class="tab-btn" onclick="openTab(event, 'mindfulness-tab')">Mindfulness</button>
-            <button class="tab-btn" onclick="openTab(event, 'prenatal-tab')">Prenatal Fitness</button>
-            <button class="tab-btn" onclick="openTab(event, 'postnatal-tab')">Postnatal Recovery</button>
-        </div>
-
-        <div id="athletics-tab" class="tab-content active-content">
-            <div class="card athletics-card">
-                <h3>Athletics</h3>
-                <p>Discipline, training, and hardworking young athletes are the pillars of our academy. We push limits to achieve excellence.</p>
-                <div class="video-grid">
-                    <video controls><source src="icons/11.mp4" type="video/mp4"></video>
-                    <video controls><source src="icons/12.mp4" type="video/mp4"></video>
+    <!-- Prenatal Fitness Tab -->
+    <div class="tab-content" id="prenatal">
+        <div class="card">
+            <div class="program-layout">
+                <div class="program-text">
+                    <h3>Prenatal Fitness</h3>
+                    <p>Safe, expert-guided fitness programs designed for expectant mothers. Our prenatal fitness program focuses on maintaining strength, flexibility, and cardiovascular health throughout pregnancy.</p>
+                    <p>Sessions are tailored to each trimester, ensuring comfort and safety while keeping you active and energized.</p>
+                    <p class="cta-text">For bookings and further details, <a href="#contact" class="inline-link">Contact Us</a>.</p>
+                </div>
+                <div class="program-image">
+                    <img src="Pre&post/P1.png" alt="Prenatal Fitness Program">
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="mindfulness-tab" class="tab-content">
-            <div class="card">
-                <h3>Mindfulness</h3>
-                <p>Mental resilience and focus training crafted to optimize game-day execution and structural cognitive composure.</p>
-            </div>
-        </div>
-
-        <div id="prenatal-tab" class="tab-content">
-            <div class="card">
-                <h3>Prenatal Fitness</h3>
-                <p>Safe and structured coaching strategies engineered to maintain core capacity and athletic health levels during pregnancy.</p>
-                <div class="tab-photo-box">
-                    <img src="icons/P1.png" alt="Prenatal Fitness Program" class="program-img">
+    <!-- Postnatal Recovery Tab -->
+    <div class="tab-content" id="postnatal">
+        <div class="card">
+            <div class="program-layout">
+                <div class="program-text">
+                    <h3>Postnatal Recovery</h3>
+                    <p>Gentle yet effective recovery programs to help new mothers regain strength, restore core stability, and rebuild fitness after childbirth.</p>
+                    <p>Our certified trainers guide you through progressive exercises designed to support your body's natural recovery process.</p>
+                    <p class="cta-text">For bookings and further details, <a href="#contact" class="inline-link">Contact Us</a>.</p>
+                </div>
+                <div class="program-image">
+                    <img src="Pre&post/P1.png" alt="Postnatal Recovery Program">
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div id="postnatal-tab" class="tab-content">
-            <div class="card">
-                <h3>Postnatal Recovery</h3>
-                <p>Gradual re-conditioning programs engineered to safely return your body to primary peak operational athletic baselines.</p>
-                <div class="tab-photo-box">
-                    <img src="icons/P1.png" alt="Postnatal Recovery Program" class="program-img">
-                </div>
-            </div>
+<!-- ========== PRODUCTS SECTION ========== -->
+<section id="products">
+    <h2>Sports Journal</h2>
+    <p class="section-subtitle">Keep track of your progress every single day.</p>
+
+    <div class="product-premium-card">
+        <div class="preview-box">
+            <img src="J1.png" class="preview-img" alt="Journal Cover">
+            <img src="J2.png" class="preview-img" alt="Journal Inside">
         </div>
+        <div class="product-info">
+            <h3>101-Day Athletic Training Journal</h3>
+            <p class="product-quote">"The secret of getting ahead is getting started." — Mark Twain</p>
+            <p>Get your professional printable copy and start building winning habits that lead to your goals.</p>
+            <a href="https://wa.me/message/7W7V3H6VK3LIO1" target="_blank" class="cta-btn whatsapp-btn">
+                <img src="whats app logo.jpg" alt="" class="btn-icon"> Start Tracking — Order Now
+            </a>
+        </div>
+    </div>
+</section>
 
-        <p class="booking-cta">For bookings and further details, please <a href="#contact">Contact Us</a>.</p>
-    </section>
+<!-- ========== CONTACT / FOOTER ========== -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Athletic Academy">
+        </div>
+        <h2>Contact Us</h2>
+        <div class="social-links">
+            <a href="https://wa.me/919994990555" target="_blank" class="social-item">
+                <img src="whats app logo.jpg" alt="WhatsApp"> 
+                <span>+91 9994990555</span>
+            </a>
+            <a href="https://www.instagram.com/gallop_athletic_academy?igsh=MTFmenp0OXpqZHZudg==" target="_blank" class="social-item">
+                <img src="insta logo.png" alt="Instagram"> 
+                <span>@gallop_athletic_academy</span>
+            </a>
+            <a href="mailto:gallopathleticacademy@gmail.com" class="social-item">
+                <img src="email logo.png" alt="Email"> 
+                <span>gallopathleticacademy@gmail.com</span>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2026 Gallop Athletic Academy. All rights reserved.</p>
+    </div>
+</footer>
 
-    <section id="products">
-        <h2>SPORTS JOURNAL</h2>
-        <div class="product-premium-card">
-            <div class="preview-box">
-                <img src="icons/J1.png" class="preview-img" alt="Journal Preview 1">
-                <img src="icons/J2.png" class="preview-img" alt="Journal Preview 2">
-            </div>
-
-            <div class="product-cta">
-                <h3>Journal (keep track of your progress every single day)</h3>
-                <blockquote>"The only track you should worry about is your own progress."</blockquote>
-                <p>Get your professional printable copy and reach your goals faster.</p>
-                <a href="https://gopala4.gumroad.com/l/gallop" target="_blank" class="buy-btn">
+<script src="app.js"></script>
+</body>
+</html>
