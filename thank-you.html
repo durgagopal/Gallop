@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Gallop Athletic Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        .thank-you-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            max-width: 520px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        /* Fixed: Replaced var(--gallop-blue) with var(--gallop-red) for design consistency */
+        .thank-you-card h1 { color: var(--gallop-red); margin-bottom: 1rem; }
+        .thank-you-card p { color: var(--text-gray); line-height: 1.7; margin-bottom: 1rem; }
+        .license-info {
+            background: var(--card-bg);
+            border-left: 4px solid var(--gallop-red);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--gallop-red);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <h1>&#127942; Thank You!</h1>
+            <p>Your purchase of the <strong>101-Day Athletic Training Journal</strong> is confirmed.</p>
+            <p>A download link has been sent to your email. Please check your inbox (and spam folder).</p>
+            <div class="license-info">
+                <strong>&#128274; License Terms:</strong><br>
+                This digital product is licensed for your <strong>personal use only</strong>.
+                It is tied to your registered email and may not be copied, shared, resold,
+                or redistributed in any form. Unauthorized distribution will result in
+                revocation of access.
+            </div>
+            <p><small>Need help? Contact us at <a href="mailto:gallopathleticacademy@gmail.com">gallopathleticacademy@gmail.com</a></small></p>
+            <a href="index.html" class="back-link">&larr; Back to Gallop Athletic Academy</a>
+        </div>
+    </div>
+</body>
+</html>
