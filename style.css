@@ -287,15 +287,16 @@ h2 {
     display: inline-block;
     background: var(--gallop-red);
     color: var(--white);
-    border: none;
     text-decoration: none;
     padding: 14px 32px;
     border-radius: 8px;
     font-weight: 700;
     font-size: 1.05rem;
     box-shadow: 0 4px 14px rgba(227, 6, 19, 0.25);
-    cursor: pointer;
     transition: transform 0.2s ease, background 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 .buy-btn:hover {
     background: #c30510;
