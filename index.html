@@ -6,10 +6,13 @@
     <title>Gallop Athletic Academy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    <!-- Dodo Payment Overlay Integration -->
+    <script src="https://js.dodopayments.com/v1/overlay.js" defer></script>
 </head>
 <body>
     <nav>
         <div class="logo">
+            <!-- Updated Logo Path -->
             <img src="icons/PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop Logo">
         </div>
         <ul class="nav-links">
@@ -29,32 +32,34 @@
         <h2>ABOUT US</h2>
         <div class="about-split-container">
             <div class="about-text">
-                <p>Established with a passion for sports and a vision to create future champions, Gallop Athletic Academy has been a guiding force in developing talented athletes and promoting excellence in athletics through professional training, discipline, and sportsmanship.</p>
-                <p>The academy aims to create a strong foundation for aspiring athletes by providing structured coaching, fitness development, and opportunities to participate in district, state, and national-level competitions.</p>
-                <p>With a vision to inspire passion for sports and holistic development, Gallop Athletic Academy focuses not only on athletic performance but also on character building, teamwork, leadership, and perseverance.</p>
-                <p>Guided by experienced coaches and mentors, the academy encourages athletes to push their limits, achieve their goals, and represent their teams with pride and determination.</p>
-                <p>Over the years, the academy has become a hub for emerging sports talent, producing athletes who consistently excel in various track and field events.</p>
-                <p>Through continuous training programs, motivational initiatives, and a supportive environment, Gallop Athletic Academy strives to shape future champions and foster a culture of fitness and excellence in the community.</p>
+                <p>Established with a passion for sports and a vision to create future champions, Gallop Athletic Academy has been a guiding force in developing talented athletes and promoting excellence in athletics through professional training, discipline, and sportsmanship. The academy aims to create a strong foundation for aspiring athletes by providing structured coaching, fitness development, and opportunities to participate in district, state, and national-level competitions.</p>
+                <p>With a vision to inspire passion for sports and holistic development, Gallop Athletic Academy focuses not only on athletic performance but also on character building, teamwork, leadership, and perseverance. Guided by experienced coaches and mentors, the academy encourages athletes to push their limits, achieve their goals, and represent their teams with pride and determination.</p>
+                <p>Over the years, the academy has become a hub for emerging sports talent, producing athletes who consistently excel in various track and field events. Through continuous training programs, motivational initiatives, and a supportive environment, Gallop Athletic Academy strives to shape future champions and foster a culture of fitness and excellence in the community.</p>
             </div>
+            <!-- Small side photo matching the text body height seamlessly -->
             <div class="about-side-photo">
-                <img src="icons/about_photo.jpg" alt="About Gallop Team">
+                <img src="icons/about_photo.jpeg" alt="About Gallop Team">
             </div>
         </div>
 
+        <!-- Looping loop carousel targeting images 1 to 16 -->
         <div class="carousel">
-            <img src="icons/1.1.jpeg" class="slide active" alt="Gallop 1">
-            <img src="icons/1.jpeg" class="slide" alt="Gallop 2">
-            <img src="icons/2.jpeg" class="slide" alt="Gallop 3">
-            <img src="icons/3.jpeg" class="slide" alt="Gallop 4">
-            <img src="icons/4.jpeg" class="slide" alt="Gallop 5">
-            <img src="icons/5.jpeg" class="slide" alt="Gallop 6">
-            <img src="icons/6.jpeg" class="slide" alt="Gallop 7">
-            <img src="icons/9.jpeg" class="slide" alt="Gallop 8">
-            <img src="icons/10.jpeg" class="slide" alt="Gallop 9">
-            <img src="icons/13.jpeg" class="slide" alt="Gallop 10">
-            <img src="icons/14.jpeg" class="slide" alt="Gallop 11">
-            <img src="icons/15.jpeg" class="slide" alt="Gallop 12">
-            <img src="icons/16.jpeg" class="slide" alt="Gallop 13">
+            <img src="icons/1.jpeg" class="slide active" alt="Gallop 1">
+            <img src="icons/2.jpeg" class="slide" alt="Gallop 2">
+            <img src="icons/3.jpeg" class="slide" alt="Gallop 3">
+            <img src="icons/4.jpeg" class="slide" alt="Gallop 4">
+            <img src="icons/5.jpeg" class="slide" alt="Gallop 5">
+            <img src="icons/6.jpeg" class="slide" alt="Gallop 6">
+            <img src="icons/7.jpeg" class="slide" alt="Gallop 7">
+            <img src="icons/8.jpeg" class="slide" alt="Gallop 8">
+            <img src="icons/9.jpeg" class="slide" alt="Gallop 9">
+            <img src="icons/10.jpeg" class="slide" alt="Gallop 10">
+            <img src="icons/11.jpeg" class="slide" alt="Gallop 11">
+            <img src="icons/12.jpeg" class="slide" alt="Gallop 12">
+            <img src="icons/13.jpeg" class="slide" alt="Gallop 13">
+            <img src="icons/14.jpeg" class="slide" alt="Gallop 14">
+            <img src="icons/15.jpeg" class="slide" alt="Gallop 15">
+            <img src="icons/16.jpeg" class="slide" alt="Gallop 16">
         </div>
 
         <div class="testimonials">
@@ -66,8 +71,12 @@
 
     <section id="training">
         <h2>TRAINING PROGRAM</h2>
+        <!-- Fully clickable program segments -->
         <div class="tab-menu">
             <button class="tab-btn active" data-tab="athletics-tab">Athletics</button>
+            <button class="tab-btn" data-tab="mindfulness-tab">Mindfulness</button>
+            <button class="tab-btn" data-tab="prenatal-tab">Prenatal Fitness</button>
+            <button class="tab-btn" data-tab="postnatal-tab">Postnatal Recovery</button>
         </div>
 
         <div id="athletics-tab" class="tab-content active">
@@ -78,6 +87,27 @@
                     <video controls muted><source src="icons/11.mp4" type="video/mp4"></video>
                     <video controls muted><source src="icons/12.mp4" type="video/mp4"></video>
                 </div>
+            </div>
+        </div>
+
+        <div id="mindfulness-tab" class="tab-content">
+            <div class="card">
+                <h3>Mindfulness</h3>
+                <p>Mental resilience, concentration exercises, and clarity drills designed to keep competitors calm under high-stakes competitive pressure.</p>
+            </div>
+        </div>
+
+        <div id="prenatal-tab" class="tab-content">
+            <div class="card">
+                <h3>Prenatal Fitness</h3>
+                <p>Safe, low-impact structural workouts structured beautifully to maintain baseline muscle strength, flexibility, and endurance health safely.</p>
+            </div>
+        </div>
+
+        <div id="postnatal-tab" class="tab-content">
+            <div class="card">
+                <h3>Postnatal Recovery</h3>
+                <p>Gradual core restoration and strength reconditioning steps designed to help athletes transition smoothly back into daily active training dynamics.</p>
             </div>
         </div>
         
@@ -95,15 +125,25 @@
                 <h3>Journal (keep track of your progress every single day)</h3>
                 <blockquote class="famous-quote">"The only track you should worry about is your own progress."</blockquote>
                 <p>Get your professional printable copy and reach your goals faster.</p>
-                <a href="https://gopala4.gumroad.com/l/gallop" target="_blank" class="buy-btn">Start tracking your journey</a>
+                <!-- Dodo overlay properties mapped seamlessly -->
+                <button 
+                    class="buy-btn" 
+                    data-dodo-product-id="pdt_0NfnfmMMS89GfWqaXU8Pa"
+                    data-dodo-redirect-url="thank-you.html">
+                    Start tracking your journey
+                </button>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>CONTACT US</h2>
+        <div class="footer-header-container">
+            <h2>CONTACT US</h2>
+            <!-- Mini integrated branding logo inside the grid elements safely -->
+            <img src="icons/PHOTO-2022-03-12-18-04-09.jpg" alt="Gallop mini logo" class="contact-inline-logo">
+        </div>
         <p class="contact-sub">Connect instantly with our academy administration grid:</p>
-
+        
         <div class="social-grid">
             <div class="social-item">
                 <a href="https://wa.me/919994990555" target="_blank">
@@ -124,13 +164,10 @@
                 </a>
             </div>
         </div>
-
         <div class="footer-bottom-brand">
             <p>&copy; 2026 Gallop Athletic Academy. All Rights Reserved.</p>
         </div>
     </footer>
-
     <script src="app.js"></script>
-    <script src="service-worker.js"></script>
 </body>
 </html>
