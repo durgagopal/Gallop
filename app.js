@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ===== AUTOMATED BG CAROUSEL ENGINE =====
+    // ===== AUTOMATED BACKGROUND CAROUSEL ENGINE =====
     const slides = document.querySelectorAll('.carousel .slide');
     let currentSlide = 0;
     const slideIntervalTime = 3500;
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[currentSlide].classList.add('active');
     }
 
+    // Safely remove broken slide imagery fallbacks from the DOM tree
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
             console.warn(`File pathway target omitted from directory files: ${this.src}`);
@@ -35,9 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Remove active classes from all buttons and tabs
             tabButtons.forEach(b => b.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
 
+            // Activate the currently clicked button and target tab layout
             btn.classList.add('active');
             const targetId = btn.getAttribute('data-tab');
             document.getElementById(targetId).classList.add('active');
