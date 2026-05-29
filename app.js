@@ -1,3 +1,34 @@
+// ===== GLOBAL CHECKOUT ROUTER FUNCTION =====
+function launchDodoCheckout(event) {
+    if (event) event.preventDefault();
+    
+    const btn = document.getElementById('dodo-checkout-btn');
+    if (!btn) return;
+
+    const productId = btn.getAttribute('data-dodo-product-id') || "pdt_0NfnfmMMS89GfWqaXU8Pa";
+    const redirectUrl = btn.getAttribute('data-dodo-redirect-url') || "thank-you.html";
+    
+    // Resolve clean absolute address matching setup folders
+    const absoluteRedirect = window.location.origin + window.location.pathname.replace('index.html', '') + redirectUrl;
+
+    console.log("Attempting overlay initialization via Product ID:", productId);
+
+    if (window.DodoPayments) {
+        try {
+            window.DodoPayments.open({
+                productId: productId,
+                redirectUrl: absoluteRedirect
+            });
+        } catch (error) {
+            console.error("Dodo SDK execution failed. Redirecting to external storefront link:", error);
+            window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
+        }
+    } else {
+        console.warn("Dodo SDK script asset not detected on runtime. Loading Gumroad backup option.");
+        window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // ===== AUTOMATED BG CAROUSEL ENGINE =====
     const slides = document.querySelectorAll('.carousel .slide');
@@ -14,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
-            console.warn(`File target omitted from directory: ${this.src}`);
             this.remove(); 
         });
     });
@@ -62,28 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-    // ===== DODO PAYMENT OVERLAY SDK EXPLICIT TRIGGER =====
-    const checkoutButton = document.getElementById('dodo-checkout-btn');
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const productId = checkoutButton.getAttribute('data-dodo-product-id');
-            const redirectUrl = checkoutButton.getAttribute('data-dodo-redirect-url') || 'thank-you.html';
-            
-            // Build absolute path for the webhook redirect engine
-            const absoluteRedirect = window.location.origin + window.location.pathname.replace('index.html', '') + redirectUrl;
-
-            if (window.DodoPayments) {
-                window.DodoPayments.open({
-                    productId: productId,
-                    redirectUrl: absoluteRedirect
-                });
-            } else {
-                console.warn("Dodo SDK blocked or offline. Navigating directly to payment web page asset instead.");
-                window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
-            }
-        });
-    }
 });
