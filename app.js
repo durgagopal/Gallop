@@ -1,34 +1,3 @@
-// ===== GLOBAL CHECKOUT ROUTER FUNCTION =====
-function launchDodoCheckout(event) {
-    if (event) event.preventDefault();
-    
-    const btn = document.getElementById('dodo-checkout-btn');
-    if (!btn) return;
-
-    const productId = btn.getAttribute('data-dodo-product-id') || "pdt_0NfnfmMMS89GfWqaXU8Pa";
-    const redirectUrl = btn.getAttribute('data-dodo-redirect-url') || "thank-you.html";
-    
-    // Resolve clean absolute address matching setup folders
-    const absoluteRedirect = window.location.origin + window.location.pathname.replace('index.html', '') + redirectUrl;
-
-    console.log("Attempting overlay initialization via Product ID:", productId);
-
-    if (window.DodoPayments) {
-        try {
-            window.DodoPayments.open({
-                productId: productId,
-                redirectUrl: absoluteRedirect
-            });
-        } catch (error) {
-            console.error("Dodo SDK execution failed. Redirecting to external storefront link:", error);
-            window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
-        }
-    } else {
-        console.warn("Dodo SDK script asset not detected on runtime. Loading Gumroad backup option.");
-        window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
-    }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     // ===== AUTOMATED BG CAROUSEL ENGINE =====
     const slides = document.querySelectorAll('.carousel .slide');
@@ -37,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function autoAdvanceSlides() {
         if (slides.length === 0) return;
-        
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
@@ -45,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
-            this.remove(); 
+            console.warn(`File pathway target omitted from directory files: ${this.src}`);
+            this.remove();
         });
     });
     setInterval(autoAdvanceSlides, slideIntervalTime);
@@ -60,19 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
         testimonials[currentTestimonial].classList.add('active');
     }, 5000);
 
-    // ===== TRAINING TAB SWITCHING IMPLEMENTATION =====
+    // ===== TRAINING TAB INTERACTIVE ENGINE =====
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
 
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            button.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
+            btn.classList.add('active');
+            const targetId = btn.getAttribute('data-tab');
+            document.getElementById(targetId).classList.add('active');
         });
     });
 
@@ -93,3 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// ===== DODO PAYMENT OVERLAY IMPLEMENTATION LAYER =====
+function openDodoOverlay() {
+    if (typeof DodoPaymentsCheckout !== 'undefined') {
+        DodoPaymentsCheckout.open({
+            productId: "pdt_0NfnfmMMS89GfWqaXU8Pa",
+            onSuccess: function(response) {
+                // Routes directly to the custom thank you template page 
+                window.location.href = "thank-you.html";
+            }
+        });
+    } else {
+        alert("Payment gateway configuration loading error. Check internet connection.");
+    }
+}
