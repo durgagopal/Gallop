@@ -37,7 +37,7 @@
                 <p>Through continuous training programs, motivational initiatives, and a supportive environment, Gallop Athletic Academy strives to shape future champions and foster a culture of fitness and excellence in the community.</p>
             </div>
             <div class="about-side-photo">
-                <img src="icons/about_photo.jpg" alt="About Gallop Team">
+                <img src="icons/about_photo.jpeg" alt="About Gallop Team">
             </div>
         </div>
 
@@ -119,7 +119,8 @@
                 <h3>Journal (keep track of your progress every single day)</h3>
                 <blockquote class="famous-quote">"The only track you should worry about is your own progress."</blockquote>
                 <p>Get your professional printable copy and reach your goals faster.</p>
-                <button class="buy-btn" data-dodo-product="pdt_0NfnfmMMS89GfWqaXU8Pa" onclick="openDodoOverlay()">Start tracking your journey</button>
+                <!-- Direct Static Payment Redirect Pattern to bypass script blocks completely -->
+                <a href="https://checkout.dodopayments.com/buy/pdt_0NfnfmMMS89GfWqaXU8Pa" target="_blank" class="buy-btn-link">Start tracking your journey</a>
             </div>
         </div>
     </section>
@@ -152,10 +153,6 @@
         </div>
     </footer>
 
-<!-- Corrected Dodo Payments CDN Script -->
-    <script src="https://cdn.jsdelivr.net/npm/dodopayments-checkout@latest/dist/index.js"></script>
-    
-    <!-- Local logic scripts loaded with defer properties -->
     <script src="app.js" defer></script>
     <script src="service-worker.js" defer></script>
 </body>
