@@ -152,8 +152,11 @@
         </div>
     </footer>
 
-    <script src="https://js.dodopayments.com/v1/inline-checkout.js"></script>
-    <script src="app.js"></script>
-    <script src="service-worker.js"></script>
+<!-- Corrected Dodo Payments CDN Script -->
+    <script src="https://cdn.jsdelivr.net/npm/dodopayments-checkout@latest/dist/index.js"></script>
+    
+    <!-- Local logic scripts loaded with defer properties -->
+    <script src="app.js" defer></script>
+    <script src="service-worker.js" defer></script>
 </body>
 </html>
