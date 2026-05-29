@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[currentSlide].classList.add('active');
     }
 
-    // Handle missing files gracefully
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
             console.warn(`File target omitted from directory: ${this.src}`);
@@ -39,11 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
 
-            // Remove active status from other buttons and contents
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
-            // Highlight current targets
             button.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
@@ -65,4 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // ===== DODO PAYMENT OVERLAY SDK EXPLICIT TRIGGER =====
+    const checkoutButton = document.getElementById('dodo-checkout-btn');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const productId = checkoutButton.getAttribute('data-dodo-product-id');
+            const redirectUrl = checkoutButton.getAttribute('data-dodo-redirect-url') || 'thank-you.html';
+            
+            // Build absolute path for the webhook redirect engine
+            const absoluteRedirect = window.location.origin + window.location.pathname.replace('index.html', '') + redirectUrl;
+
+            if (window.DodoPayments) {
+                window.DodoPayments.open({
+                    productId: productId,
+                    redirectUrl: absoluteRedirect
+                });
+            } else {
+                console.warn("Dodo SDK blocked or offline. Navigating directly to payment web page asset instead.");
+                window.open("https://gopala4.gumroad.com/l/gallop", "_blank");
+            }
+        });
+    }
 });
