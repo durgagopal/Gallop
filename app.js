@@ -62,16 +62,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// ===== DODO PAYMENT OVERLAY IMPLEMENTATION LAYER =====
+// ===== INITIALIZE DODO SDK ON PAGE LOAD =====
+document.addEventListener("DOMContentLoaded", () => {
+    // Check if CDN loaded correctly
+    if (typeof DodoPaymentsCheckout !== 'undefined') {
+        DodoPaymentsCheckout.DodoPayments.Initialize({
+            mode: "test", // Switch to 'live' when your academy goes live
+            displayType: "overlay"
+        });
+    } else {
+        console.error("Dodo Payments CDN script failed to initialize onto page window.");
+    }
+    
+    // ... rest of your existing DOMContentLoaded code (tabs, carousel, etc.) ...
+});
+
+// ===== UPDATED DODO PAYMENT OVERLAY FLOW =====
 function openDodoOverlay() {
     if (typeof DodoPaymentsCheckout !== 'undefined') {
-        DodoPaymentsCheckout.open({
-            productId: "pdt_0NfnfmMMS89GfWqaXU8Pa",
-            onSuccess: function(response) {
-                // Routes directly to the custom thank you template page 
-                window.location.href = "thank-you.html";
-            }
-        });
+        try {
+            // Generates the checkout link using your exact Product ID via Dodo's routing structure
+            DodoPaymentsCheckout.DodoPayments.Checkout.open({
+                checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NfnfmMMS89GfWqaXU8Pa"
+            });
+        } catch (error) {
+            console.error("Checkout modal launch failure:", error);
+            alert("Unable to open the secure payment view. Please try again.");
+        }
     } else {
         alert("Payment gateway configuration loading error. Check internet connection.");
     }
