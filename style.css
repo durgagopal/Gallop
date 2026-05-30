@@ -234,25 +234,31 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     background-color: #000;
 }
+
+/* Precise sizing and container alignment logic for D1 and D2 */
 .postnatal-ai-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
     gap: 20px;
     margin-top: 25px;
+    width: 100%;
+    overflow: hidden;
 }
 .ai-graphic {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
+    max-width: 45%; 
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+
 .center-cta-wrap {
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
-/* Perfect replica styling for both CTAs based on sample asset */
+
+/* Main action button tracking style layout */
 .journey-btn {
     display: inline-block;
     background-color: #E30613;
@@ -263,7 +269,7 @@ h2 {
     text-decoration: none;
     padding: 16px 42px;
     border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(227, 6, 19, 0.3), inset 0 -3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(227, 6, 19, 0.3);
     transition: transform 0.15s ease, background-color 0.15s ease;
     text-align: center;
     border: none;
@@ -276,6 +282,29 @@ h2 {
 .journey-btn:active {
     transform: translateY(1px);
 }
+
+/* Core styles for the Calendly floating screen badge override layout */
+.calendly-badge-widget {
+    right: 20px !important;
+    bottom: 20px !important;
+}
+.calendly-badge-content {
+    background-color: #E30613 !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    border-radius: 18px !important;
+    padding: 0 28px !important;
+    height: 54px !important;
+    line-height: 1.3 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: pre-wrap !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
 .product-premium-card {
     display: flex;
     align-items: center;
@@ -358,10 +387,15 @@ footer h2 {
     text-align: center;
     color: var(--text-gray);
 }
+
 @media(max-width: 768px) {
     .about-split-container, .product-premium-card, .video-grid, .postnatal-ai-showcase {
         flex-direction: column;
         align-items: center;
+    }
+    .ai-graphic {
+        max-width: 90%;
+        margin-bottom: 15px;
     }
     .about-side-photo { margin-top: 20px; }
     nav {
