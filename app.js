@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ===== AUTOMATED BACKGROUND CAROUSEL ENGINE =====
+    // ===== DYNAMIC IMAGE LOOP CAROUSEL ENGINE (1.jpeg to 16.jpeg) =====
     const slides = document.querySelectorAll('.carousel .slide');
     let currentSlide = 0;
     const slideIntervalTime = 3500;
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[currentSlide].classList.add('active');
     }
 
-    // Safely remove broken slide imagery fallbacks from the DOM tree
+    // Filter out missing files to avoid broken frames
     slides.forEach((slide) => {
         slide.addEventListener('error', function() {
-            console.warn(`File pathway target omitted from directory files: ${this.src}`);
             this.remove();
         });
     });
+
     setInterval(autoAdvanceSlides, slideIntervalTime);
 
     // ===== TESTIMONIAL ENGINE =====
@@ -33,14 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== TRAINING TAB INTERACTIVE ENGINE =====
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
-
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active classes from all buttons and tabs
             tabButtons.forEach(b => b.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
-
-            // Activate the currently clicked button and target tab layout
+            
             btn.classList.add('active');
             const targetId = btn.getAttribute('data-tab');
             document.getElementById(targetId).classList.add('active');
@@ -51,15 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchorLink => {
         anchorLink.addEventListener('click', function(e) {
             const targetAnchorId = this.getAttribute('href');
-            const targetElementNode = document.querySelector(targetAnchorId);
-            if (targetElementNode) {
-                e.preventDefault();
-                const navigationOffsetHeight = document.querySelector('nav').offsetHeight;
-                const computedTargetPosition = targetElementNode.offsetTop - navigationOffsetHeight;
-                window.scrollTo({
-                    top: computedTargetPosition,
-                    behavior: 'smooth'
-                });
+            if (targetAnchorId.startsWith("#")) {
+                const targetElementNode = document.querySelector(targetAnchorId);
+                if (targetElementNode) {
+                    e.preventDefault();
+                    const navigationOffsetHeight = document.querySelector('nav').offsetHeight;
+                    const computedTargetPosition = targetElementNode.offsetTop - navigationOffsetHeight;
+                    window.scrollTo({
+                        top: computedTargetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
