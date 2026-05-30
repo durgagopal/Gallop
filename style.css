@@ -234,8 +234,6 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     background-color: #000;
 }
-
-/* Precise sizing and container alignment logic for D1 and D2 */
 .postnatal-ai-showcase {
     display: flex;
     justify-content: center;
@@ -251,14 +249,11 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-
 .center-cta-wrap {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
-
-/* Main action button tracking style layout */
 .journey-btn {
     display: inline-block;
     background-color: #E30613;
@@ -282,8 +277,6 @@ h2 {
 .journey-btn:active {
     transform: translateY(1px);
 }
-
-/* Core styles for the Calendly floating screen badge override layout */
 .calendly-badge-widget {
     right: 20px !important;
     bottom: 20px !important;
@@ -304,7 +297,6 @@ h2 {
     white-space: pre-wrap !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
 }
-
 .product-premium-card {
     display: flex;
     align-items: center;
@@ -387,7 +379,6 @@ footer h2 {
     text-align: center;
     color: var(--text-gray);
 }
-
 @media(max-width: 768px) {
     .about-split-container, .product-premium-card, .video-grid, .postnatal-ai-showcase {
         flex-direction: column;
